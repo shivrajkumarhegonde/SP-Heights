@@ -19,7 +19,7 @@ def home(request):
     print("Template Directory Exists:", os.path.exists(template_dir))
     print("Templates:", os.listdir(template_dir) if os.path.exists(template_dir) else "Not Found")
 
-    return render(request, 'home.html')
+    return render(request, 'Home.html')
 
 @login_required
 def dashboard(request):
