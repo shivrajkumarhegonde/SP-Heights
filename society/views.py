@@ -11,10 +11,14 @@ from .models import Notice
 from .models import Event
 from .forms import EventForm
 from django.shortcuts import get_object_or_404, redirect
+import os
 
 
 def home(request):
-    """Home page accessible to everyone (visitors & logged-in users)."""
+    template_dir = os.path.join(os.path.dirname(__file__), '../template')
+    print("Template Directory Exists:", os.path.exists(template_dir))
+    print("Templates:", os.listdir(template_dir) if os.path.exists(template_dir) else "Not Found")
+
     return render(request, 'home.html')
 
 @login_required
