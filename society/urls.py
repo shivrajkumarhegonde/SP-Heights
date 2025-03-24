@@ -5,7 +5,8 @@ from .views import complaint_list, create_complaint, update_complaint_status
 from .views import update_maintenance_status
 from .views import edit_notice, delete_notice
 from .views import event_list, create_event, edit_event, delete_event
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('membership/', views.membership_directory, name='membership_directory'),
@@ -52,3 +53,5 @@ urlpatterns = [
 
     path('admin/manage-users/', views.manage_users, name='manage_users'),
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
