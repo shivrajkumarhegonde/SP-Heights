@@ -1,0 +1,46 @@
+    {% extends 'base.html' %}
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/complaints.css' %}">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Complaint Management</h2>
+            <a href="{% url 'create_complaint' %}" class="btn btn-primary mb-3">Create Complaint</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Created By</th>
+                        <th>Created At</th>
+                        <th>Actions</th>  <!-- New column for actions -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for complaint in complaints %}
+                    <tr>
+                        <td>{{ complaint.title }}</td>
+                        <td>{{ complaint.description }}</td>
+                        <td>{{ complaint.created_by.username }}</td>
+                        <td>{{ complaint.created_at }}</td>
+                        <td><strong>{{ complaint.status }}</strong></td>
+
+                        {% if user.is_admin %}
+                            <td>
+                                {% if complaint.status == "Pending" %}
+                                    <a href="{% url 'update_complaint_status' complaint.id 'Completed' %}" class="btn btn-success">Mark as Completed</a>
+                                    <a href="{% url 'update_complaint_status' complaint.id 'Rejected' %}" class="btn btn-danger">Reject</a>
+                                {% else %}
+                                    <span class="text-muted">No actions</span>
+                                {% endif %}
+                                <!-- Delete button -->
+                                <a href="{% url 'delete_complaint' complaint.id %}" class="btn btn-warning" onclick="return confirm('Are you sure you want to delete this complaint?');">Delete</a>
+                            </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endblock %}

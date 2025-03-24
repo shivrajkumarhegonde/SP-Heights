@@ -1,0 +1,122 @@
+/* 🎨 Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+}
+
+/* 🌟 Main Container Styling */
+.container {
+    padding: 30px;
+}
+
+/* 🎭 Notice Board Title */
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* 📝 Table Styling */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+/* 🌟 Table Header */
+.table thead {
+    background-color: #34495e;
+    color: white;
+}
+
+/* 🖥 Table Hover Effect */
+.table tbody tr {
+    transition: transform 0.3s ease-in-out;
+}
+
+.table tbody tr:hover {
+    transform: scale(1.02);
+    background: #f0f8ff;
+}
+
+/* ✨ Notice Row Fade-in Effect */
+.table tbody tr {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+/* 🎨 Buttons Styling */
+.btn {
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🟢 Create Notice Button */
+.btn-primary {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9, #1c6ea4);
+}
+
+/* 🟠 Edit Button */
+.btn-warning {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    border: none;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+/* 🔴 Delete Button */
+.btn-danger {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: none;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+}
+
+/* 🎭 Footer */
+footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease-in-out;
+}
+
+footer:hover {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+}
+
+/* ✨ Navbar Logo */
+.logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+/* 🌟 Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

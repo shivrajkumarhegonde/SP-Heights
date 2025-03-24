@@ -1,0 +1,46 @@
+/* Centered Form */
+.container {
+    margin-top: 50px;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+/* Form Inputs */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Buttons */
+.btn-success {
+    background: linear-gradient(to right, #28a745, #218838);
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.btn-success:hover {
+    background: linear-gradient(to right, #34d058, #28a745);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: linear-gradient(to right, #6c757d, #5a6268);
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(to right, #868e96, #6c757d);
+}

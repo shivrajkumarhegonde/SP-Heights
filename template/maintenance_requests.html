@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Load static files -->
+{% load static %}
+
+<!-- Link to Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Link to maintenance_requests.css -->
+<link rel="stylesheet" href="{% static 'css/maintenance_requests.css' %}">
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4 animated-heading">Maintenance Requests</h2>
+
+    <!-- Create Request Button -->
+    <div class="text-center mb-4">
+        <a href="{% url 'create_maintenance_request' %}" class="btn btn-primary create-request-button animated-button">Create Request</a>
+    </div>
+
+    <!-- Maintenance Requests Table -->
+    <table class="table table-striped maintenance-table animated-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Created At</th>
+                {% if user.is_superuser %}
+                    <th>Actions</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in requests %}
+                <tr class="animated-row">
+                    <td>{{ request.title }}</td>
+                    <td>
+                        <span class="status-badge status-{{ request.status|lower }}">{{ request.status }}</span>
+                    </td>
+                    <td>{{ request.created_at }}</td>
+                    {% if user.is_superuser %}
+                        <td>
+                            <form action="{% url 'update_maintenance_status' request.id %}" method="POST" class="d-inline">
+    {% csrf_token %}
+    <input type="hidden" name="status" value="Completed">
+    <button type="submit" class="btn btn-success btn-sm">Mark Complete</button>
+</form>
+
+<form action="{% url 'update_maintenance_status' request.id %}" method="POST" class="d-inline">
+    {% csrf_token %}
+    <input type="hidden" name="status" value="Rejected">
+    <button type="submit" class="btn btn-danger btn-sm">Reject</button>
+</form>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

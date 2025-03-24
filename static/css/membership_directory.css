@@ -1,0 +1,103 @@
+/* Membership Directory Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.animated-heading {
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: uppercase;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.animated-form {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.filter-button, .add-member-button {
+    background-color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.filter-button:hover, .add-member-button:hover {
+    background-color: #218838;
+}
+
+.member-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.member-table th {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.member-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.edit-button {
+    background: #ffc107;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.edit-button:hover {
+    background: #e0a800;
+}
+
+.delete-button {
+    background: #dc3545;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.delete-button:hover {
+    background: #c82333;
+}
+
+.animated-row {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

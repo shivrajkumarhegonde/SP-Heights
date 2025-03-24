@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>Welcome, {{ request.user.username }}</h1>
+        <p>This is your dashboard. Use the navigation bar to access different features.</p>
+    </div>
+</div>
+{% endblock %}

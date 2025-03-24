@@ -1,0 +1,166 @@
+/* General Styling */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading Styling */
+.animated-heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Filter Form Styling */
+.filter-form {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.filter-form label {
+    font-weight: 500;
+    color: #34495e;
+}
+
+.filter-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease;
+}
+
+.filter-form .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Button Styling */
+.animated-button {
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.animated-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filter-button {
+    background-color: #28a745;
+    border: none;
+}
+
+.filter-button:hover {
+    background-color: #218838;
+}
+
+.add-member-button {
+    background-color: #17a2b8;
+    border: none;
+}
+
+.add-member-button:hover {
+    background-color: #138496;
+}
+
+.edit-button {
+    background-color: #ffc107;
+    border: none;
+}
+
+.edit-button:hover {
+    background-color: #e0a800;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    border: none;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Table Styling */
+.member-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.member-table th,
+.member-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.member-table th {
+    background-color: #3498db;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.member-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.member-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Row Animation */
+.animated-row {
+    animation: fadeInRow 0.5s ease-in-out;
+}
+
+@keyframes fadeInRow {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

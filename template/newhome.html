@@ -1,0 +1,111 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home - Society Management</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            position: relative;
+            overflow: hidden; /* Ensure no scrollbar appears */
+        }
+
+        /* Fullscreen Video */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the video covers the screen */
+            z-index: -1; /* Sends video to the background */
+        }
+
+        header, main, footer {
+            position: relative; /* Ensures these elements are above the video */
+            z-index: 1;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background for visibility */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 8px 12px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+        }
+
+        main {
+            padding: 20px;
+            backdrop-filter: blur(5px); /* Slight blur for better text visibility */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+<!--    <video class="background-video" autoplay muted loop>-->
+<!--        <source src="{% static 'videos/backaground video.mp4' %}" type="video/mp4">-->
+<!--        Your browser does not support HTML5 video.-->
+<!--    </video>-->
+
+    <header>
+        <h1>Welcome to Society Management</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'recidency' %}">Residency</a></li>
+                <li><a href="{% url 'member_list' %}">Members</a></li>
+                <li><a href="{% url 'document_list' %}">Documents</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>Learn more about our community and the services we offer to members.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Society Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+{% endblock %}

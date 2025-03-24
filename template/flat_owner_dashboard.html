@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Link to your custom CSS file -->
+<link rel="stylesheet" href="{% static 'css/flatownerdashboard.css' %}">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="dashboard-title">Flat Owner Dashboard</h1>
+            <p class="dashboard-welcome">Welcome, <strong>{{ request.user.username }}</strong>. You can manage your flat and interact with the society.</p>
+
+            <div class="row mt-4">
+                <!-- Card 1: View Notices -->
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card hover-effect">
+                        <div class="card-body">
+                            <h5 class="card-title">📢 View Notices</h5>
+                            <p class="card-text">Check important notices from the society.</p>
+                            <a href="{% url 'notice_list' %}" class="btn btn-primary btn-block">Go to Notices</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: View Events -->
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card hover-effect">
+                        <div class="card-body">
+                            <h5 class="card-title">🎉 View Events</h5>
+                            <p class="card-text">Check upcoming society events.</p>
+                            <a href="{% url 'event_list' %}" class="btn btn-primary btn-block">Go to Events</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Submit Complaints -->
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card hover-effect">
+                        <div class="card-body">
+                            <h5 class="card-title">📝 Submit Complaints</h5>
+                            <p class="card-text">Raise complaints for any issues.</p>
+                            <a href="{% url 'complaint_list' %}" class="btn btn-primary btn-block">Go to Complaints</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Maintenance Requests -->
+                <div class="col-md-4 mb-4">
+                    <div class="card dashboard-card hover-effect">
+                        <div class="card-body">
+                            <h5 class="card-title">🔧 Maintenance Requests</h5>
+                            <p class="card-text">Submit and track maintenance requests.</p>
+                            <a href="{% url 'maintenance_requests' %}" class="btn btn-primary btn-block">Go to Maintenance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

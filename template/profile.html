@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mb-3">
+    <label class="form-label"><strong>User Type:</strong></label>
+    <p class="form-control-static">{{ user_type }}</p>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="text-center">Profile</h2>
+                </div>
+                <div class="card-body">
+                    <!-- Profile Details -->
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Username:</strong></label>
+                        <p class="form-control-static">{{ username }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Email:</strong></label>
+                        <p class="form-control-static">{{ email }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Phone Number:</strong></label>
+                        <p class="form-control-static">{{ phone_number }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Flat Number:</strong></label>
+                        <p class="form-control-static">{{ flat_number }}</p>
+                    </div>
+                    <!-- Edit Profile Button -->
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+
+    .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+</style>
+{% endblock %}
