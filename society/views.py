@@ -15,7 +15,7 @@ from django.shortcuts import get_object_or_404, redirect
 
 def home(request):
     """Home page accessible to everyone (visitors & logged-in users)."""
-    return render(request, 'home.html')
+    return render(request, 'Home.html')
 
 @login_required
 def dashboard(request):
